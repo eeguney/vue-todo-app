@@ -10,6 +10,7 @@ git pull git@github.com:eeguney/vue-todo-app.git
 cd vue-todo-app
 npm install
 npm run serve OR npm run dev
+```
 
 ## License:
 
