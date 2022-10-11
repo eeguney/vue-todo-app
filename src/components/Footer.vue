@@ -5,7 +5,7 @@ export default {
 </script>
 <template>
   <footer>
-    <p>Created by <strong>Emre Güney</strong> - Open source on <a href="http://github.com/eeguney" target="_blank"><strong>Github</strong></a></p>
+    <p>Created by <strong>Emre Güney</strong> - Open source on <a href="https://github.com/eeguney/vue-todo-app" target="_blank"><strong>Github</strong></a></p>
   </footer>
 </template>
 
