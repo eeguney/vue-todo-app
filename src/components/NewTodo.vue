@@ -145,7 +145,7 @@ export default {
   backdrop-filter: blur(5px);
   box-shadow: 0 2px 20px -4px #00000070;
   font-size: 1.2rem;
-  @media (max-width: 1024px) {
+  @media (max-width: 600px) {
     padding-left: 7rem;
     font-size: 14px;
   }
@@ -180,7 +180,7 @@ export default {
   justify-content: center;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 16px;
   bottom: 0;
   margin: auto;
   width: 100px;

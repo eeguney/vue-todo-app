@@ -4,6 +4,7 @@ export default {
   name: "Todos",
   props: {
     todos: Array,
+    searchData: Array | Object
   },
   data() {
     return {
@@ -15,6 +16,13 @@ export default {
   watch: {
     todos(newTodos, oldTodos) {
       this.todoDatas = this.todos;
+    },
+    searchData(newTodos, oldTodos) {
+      if(this.searchData && this.searchData.length > 0) {
+        this.todoDatas = this.searchData;
+      } else {
+        this.todoDatas = this.todos;
+      }
     },
   },
   methods: {
@@ -234,6 +242,15 @@ export default {
         max-width: 100%;
       }
     }
+  }
+}
+@keyframes cardAnimation {
+  from {
+    transform: scale(0.7) translateY(-50px);
+  } 
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
   }
 }
 </style>

@@ -7,21 +7,33 @@ export default {
   data() {
     return {
       searchBox: false,
+      searchText: ""
     };
+  },
+  methods: {
+    search() {
+      this.$emit('search', this.searchText);
+      this.searchText = "";
+    },
+    closeSearch() {
+      this.$emit('search', '');
+      this.searchBox = !this.searchBox;
+    }
   },
 };
 </script>
 <template>
   <header :class="{ open: searchBox }">
     <h1>{{ title }}</h1>
-    <div class="searchbox" :class="{ open: searchBox }">
+    <form @submit.prevent="search()" class="searchbox" :class="{ open: searchBox }">
       <input
         type="text"
         spellcheck="false"
         :class="{ open: searchBox }"
+        v-model="searchText"
         placeholder="What did you looking for..."
       />
-      <button @click="searchBox = !searchBox">
+      <button type="button" @click="closeSearch">
         <font-awesome-icon
           v-if="!searchBox"
           :icon="['fa', 'search']"
@@ -35,7 +47,7 @@ export default {
           color="white"
         />
       </button>
-    </div>
+    </form>
   </header>
 </template>
 
